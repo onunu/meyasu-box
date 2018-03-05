@@ -1,10 +1,10 @@
 require 'sinatra'
+require 'dotenv/load'
 require './meyasu_box'
 
-get '/' do
-  'Hello, world'
-end
+Dotenv.load
 
 post '/' do
-  MeyasuBox.post(params)
+  return status(200) if MeyasuBox.post(params)
+  status(500)
 end

@@ -9,9 +9,10 @@ module MeyasuBox
   module_function :post
 
   class Post
+    POST_CHANNEL_URL = ENV['POST_CHANNEL_URL']
+
     def initialize(params)
       @text = params['text']
-      @response_url = params['response_url']
     end
 
     def post
@@ -23,9 +24,9 @@ module MeyasuBox
 
     def request_slack
       Faraday.post do |req|
-        req.url(@response_url)
+        req.url(POST_CHANNEL_URL)
         req.headers['Content-Type'] = 'application/json'
-        req.body = { text: 'これはテストです'}.to_json
+        req.body = { text: @text}.to_json
       end
     end
   end
