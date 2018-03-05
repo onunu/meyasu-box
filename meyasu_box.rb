@@ -2,8 +2,8 @@ require 'faraday'
 
 module MeyasuBox
   def post(params)
-    @postman = Post.new(params)
-    @postman.post
+    postman = Post.new(params)
+    postman.post
   end
 
   module_function :post
