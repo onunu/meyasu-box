@@ -1,0 +1,16 @@
+{
+  "name": "meyasu-box",
+  "description": "The slack app that provide meyasu-box to your slack team",
+  "keywords": [
+    "slack",
+    "meyasubako",
+    "meyasu-box"
+  ],
+  "repository": "https://github.com/onunu/meyasu-box",
+  "env": {
+    "POST_CHANNEL_URL": {
+      "description": "to post the ideas to your selected channel",
+      "value": "https://hooks.slack.com/services/{{ your token }}"
+    }
+  }
+}
